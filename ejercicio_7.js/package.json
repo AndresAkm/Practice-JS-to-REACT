@@ -1,0 +1,13 @@
+{
+  "name": "ejercicio_7",
+  "version": "1.0.0",
+  "description": "Ejercicio 1: Agregar al carrito sin duplicar (.some() o .find() + .map())\r Este es el clásico botón \"Agregar al carrito\" en cualquier e-commerce. Si el producto ya existe en el carrito, no se agrega una fila nueva; se le suma 1 a su cantidad.",
+  "main": "carrito.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
