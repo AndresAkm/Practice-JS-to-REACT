@@ -39,50 +39,36 @@ export const newProduct = {
     ]
 };
 
-// export const cart = [
-//     {
-//          items: catalogo[0], cantidad: 1
-//      },
-//      {
-//          items: catalogo[1],
-//         cantidad: 1
-//      }
-// ];
-
-export const cart = [
-     {
-         items: [catalogo[0]], cantidad: 1
-     },
-     {
-         items: [catalogo[1]],
-        cantidad: 1
-     }
+ export const cart = [
+      {
+          items: catalogo[0], cantidad: 1
+      },
+      {
+          items: catalogo[1],
+         cantidad: 1
+      }
 ];
 
+// Funcion add cart que sume cantidad a item ya existente y agregue el item si no existe
 
-export function addCart(cart, newProduct) {
-  const isInCart = cart.some((item) => {
-    return item.items.some((element) => element.id === newProduct.id);
-  });  if (isInCart) {
-    return cart.map((item) => {
-      const isInItem = item.items.some((element) => element.id === newProduct.id);
+export function addCart(cart, newItem){
+  const isInCart = cart.some((item) => item.items.id === newItem.id)
 
-      if (isInItem) {
-        return {
-          ...item,
-          cantidad: item.cantidad + 1
-        };
-      }
+    if (isInCart) {
+      return cart.map((item) => item.items.id === newItem.id
+      ? 
+      {...item, cantidad: item.cantidad + 1}
+      : 
+      item
+      )
+    }
 
-      return item;
-    });
-  } else {
-    return [
-      ...cart,
-      {
-        items: [newProduct],
+    return [...cart, {
+        items: newItem,
         cantidad: 1
-      }
-    ];
-  }
-} 
+        } 
+      ]
+    }
+
+
+    

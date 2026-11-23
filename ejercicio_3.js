@@ -33,6 +33,7 @@ function getBadgeStatus(usuario){
     `Panel Admin (${usuario.notificaciones ?? 0})`
     :
     `Usuario: ${usuario.nombre} bienvenido`
+    
 }
 
 function getRandomInt(min, max) {
